@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Palwinder Sangha, software developer</title>
+  <meta name="description" content="Palwinder Sangha is a software developer in Salem, Oregon. Web apps, cloud and SQL work, and embedded projects.">
+  <meta name="theme-color" content="#edeff0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* Palette comes from the colors steel turns when it is tempered:
+       straw, bronze, purple, blue. The band under the name is the only place all of them appear. */
+    :root {
+      --paper: #edeff0;
+      --ink: #20262b;
+      --muted: #566069;
+      --rule: #c3c9ce;
+      --accent: #2b5a8a;
+      --photo-bg: #d9dee2;
+      --head: "Archivo", "Helvetica Neue", Arial, sans-serif;
+      --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 1.125rem;
+      line-height: 1.65;
+    }
+
+    .wrap {
+      max-width: 46rem;
+      margin: 0 auto;
+      padding: 3.5rem 1.25rem 4rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-underline-offset: 0.18em;
+      text-decoration-thickness: 1px;
+    }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    h1, h2, h3 { font-family: var(--head); margin: 0; }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    h1 {
+      font-weight: 800;
+      font-size: clamp(2.6rem, 9vw, 4.75rem);
+      line-height: 0.98;
+      letter-spacing: -0.025em;
+    }
+
+    .role {
+      margin: 0.9rem 0 0;
+      font-family: var(--head);
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: var(--muted);
+    }
+
+    .temper {
+      height: 8px;
+      margin: 1.4rem 0 1.6rem;
+      background: linear-gradient(90deg,
+        #e6d9a0 0%, #d8b04a 18%, #a8662b 36%, #6b4a8c 62%, #2b5a8a 82%, #8fa3b3 100%);
+      transform-origin: left;
+      animation: heat 1.1s ease-out both;
+    }
+    @keyframes heat {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+
+    .pitch { margin: 0; max-width: 36rem; }
+
+    figure { margin: 0; }
+
+    figcaption {
+      margin-top: 0.5rem;
+      font-family: var(--head);
+      font-size: 0.85rem;
+      line-height: 1.4;
+      color: var(--muted);
+    }
+
+    .portrait img,
+    .shots img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      background: var(--photo-bg);
+      border-radius: 4px;
+    }
+
+    .portrait { max-width: 16rem; }
+
+    @media (min-width: 44rem) {
+      .hero { grid-template-columns: 1fr 15rem; gap: 2.5rem; }
+      .portrait { grid-column: 2; grid-row: 1; max-width: none; }
+      .intro { grid-column: 1; grid-row: 1; }
+    }
+
+    /* Sections */
+    section { margin-top: 3.5rem; }
+
+    h2 {
+      font-weight: 800;
+      font-size: 1.7rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.1rem;
+    }
+
+    section p { margin: 0 0 1rem; max-width: 38rem; }
+
+    /* Skills: plain definition list */
+    .skills { margin: 1.5rem 0 0; max-width: 38rem; }
+    .skills div {
+      display: grid;
+      grid-template-columns: 8.5rem 1fr;
+      gap: 0.25rem 1rem;
+      padding: 0.55rem 0;
+      border-top: 1px solid var(--rule);
+    }
+    .skills div:last-child { border-bottom: 1px solid var(--rule); }
+    .skills dt {
+      font-family: var(--head);
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .skills dd { margin: 0; font-size: 1rem; line-height: 1.55; }
+    @media (max-width: 30rem) {
+      .skills div { grid-template-columns: 1fr; }
+    }
+
+    /* Projects: a ruled list, not cards */
+    .project {
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--rule);
+    }
+    .project:last-child { border-bottom: 1px solid var(--rule); }
+
+    h3 {
+      font-weight: 600;
+      font-size: 1.25rem;
+    }
+
+    .meta {
+      margin: 0.2rem 0 0.7rem;
+      font-family: var(--head);
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 38rem;
+    }
+
+    .project p { margin: 0 0 0.6rem; }
+    .project p:last-child { margin-bottom: 0; }
+
+    .project .plinks { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
+
+    /* Outside of code */
+    .craft + .craft { margin-top: 2.5rem; }
+    .craft p { margin-bottom: 0; }
+    .craft h3 { margin-bottom: 0.3rem; }
+
+    .shots {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      max-width: 34rem;
+      margin-top: 1rem;
+    }
+
+    .shots.wide { max-width: 100%; }
+    .shots.wide img { aspect-ratio: 4 / 3; }
+    .craft p + p { margin-top: 0.75rem; }
+    @media (max-width: 30rem) {
+      .shots.wide { grid-template-columns: 1fr; }
+    }
+
+    .more { margin-top: 2.5rem; }
+
+    /* Links */
+    .links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.75rem;
+      font-family: var(--head);
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 3.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--rule);
+      font-family: var(--head);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    footer p { margin: 0; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .temper { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+
+    <header class="hero">
+      <div class="intro">
+        <h1>Palwinder Sangha</h1>
+        <p class="role">Software developer in Salem, Oregon</p>
+        <div class="temper" aria-hidden="true"></div>
+        <p class="pitch">I build web apps, work with cloud services and SQL data, and tinker with embedded hardware. I earned my computer science degree from Western Oregon University in 2025, and I'm looking for my next software role.</p>
+      </div>
+      <figure class="portrait">
+        <img src="images/me.jpg" alt="Palwinder Sangha smiling in a green bucket hat and a Nintendo World shirt, standing next to a costumed Viking cast member" width="900" height="1200">
+        <figcaption>Me with a cast member at Epic Universe.</figcaption>
+      </figure>
+    </header>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>Right now I work as an independent contractor evaluating AI model outputs on the DataAnnotation platform, which includes writing Python for technical evaluation tasks. Before that I was a software engineer at Impressions in Ink, a commercial printing company, where I helped move a legacy site onto a custom in-house platform while customer portals stayed up. Earlier I was one of two developers at Courthouse Club Fitness, where I wrote custom WordPress plugins in PHP and built many of the site's pages from our designer's mockups, working with him to bring them to life. Before that I was a student developer at Western Oregon University. I also have retail and delivery experience from Home Depot (flooring and paint) and grocery delivery.</p>
+      <p>I like finding what is slow or broken and fixing the cause. I also like working close to hardware, so some of my side projects run on microcontrollers.</p>
+
+      <dl class="skills">
+        <div><dt>Languages</dt><dd>C#, JavaScript and TypeScript, Python, SQL and T-SQL, PHP, PowerShell, C++, Java (learning)</dd></div>
+        <div><dt>Frameworks</dt><dd>ASP.NET Core MVC, React, Node.js, WordPress, Spring Boot (learning)</dd></div>
+        <div><dt>Cloud and data</dt><dd>Azure, MS SQL Server, MySQL, Supabase (Postgres), Vercel</dd></div>
+      </dl>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <article class="project">
+        <h3>Trust Trade</h3>
+        <p class="meta">Senior capstone, Western Oregon University, 2025. ASP.NET Core MVC (C#), Azure App Services, SQL Server, and SignalR.</p>
+        <p>A social trading platform. Users connect brokerage accounts through the Plaid API (in sandbox mode) to show their portfolios, then post, follow, comment, and message each other, with real-time chat through SignalR.</p>
+        <p>Our team was The Bitwise Wizards, and most of the work was shared. I built the Plaid integration, the profile section, chat, and the landing page, plus a few other pieces like the news section. I was also product owner, scrum master, and owner of the repo. The project has a CI/CD pipeline and Selenium and Gherkin tests.</p>
+        <p class="plinks">
+          <a href="https://trusttrade.up.railway.app/">Live site</a>
+          <a href="https://github.com/Poven45/BitwiseWizards-SeniorProject">Code on GitHub</a>
+        </p>
+      </article>
+
+      <article class="project">
+        <h3>What to Play</h3>
+        <p class="meta">React, TypeScript, and Vite. Personal project.</p>
+        <p>A site I built for fun to practice working with an external API. It uses the RAWG video game database to help you find games.</p>
+        <p class="plinks">
+          <a href="https://poven45.github.io/What-to-Play/">Live site</a>
+          <a href="https://github.com/Poven45/What-to-Play">Code on GitHub</a>
+        </p>
+      </article>
+
+      <article class="project">
+        <h3>Wedding RSVP site</h3>
+        <p class="meta">Vanilla HTML, CSS, and JavaScript. Node.js serverless functions on Vercel. Supabase (Postgres) and Resend.</p>
+        <p>I built the RSVP and event site for my sister's wedding, from the frontend to the backend. It validates input on the server and blocks spam on the public endpoint with honeypot fields, timing checks, and request throttling. The code is private, but I'm happy to walk through how it works.</p>
+      </article>
+
+      <article class="project">
+        <h3>DeskBuddy</h3>
+        <p class="meta">In progress. ESP32-S3 and PlatformIO.</p>
+        <p>A desk companion inspired by BMO, with a small color OLED display, addressable LEDs, and a real-time clock. So far I have the hardware plan, the PCB layout planning, and a firmware scaffold. It is still at the planning stage, so there is no finished hardware yet.</p>
+      </article>
+    </section>
+
+    <section id="outside-of-code">
+      <h2>Outside of code</h2>
+
+      <div class="craft">
+        <h3>Bladesmithing</h3>
+        <p>I forged a knife out of a railroad spike.</p>
+        <div class="shots">
+          <figure>
+            <img src="images/knife.jpg" alt="A hand holding a knife forged from a railroad spike, with a twisted handle and a hammered blade" width="900" height="1200" loading="lazy">
+          </figure>
+          <figure>
+            <img src="images/anvil.jpg" alt="Anvils and a hammer in a blacksmithing shop" width="900" height="1200" loading="lazy">
+          </figure>
+        </div>
+      </div>
+
+      <div class="craft">
+        <h3>3D printing</h3>
+        <p>I print a bit of everything: miniatures, chess sets, models, and articulated toys for friends. I have also printed useful things, like an insert to replace a broken part in a car and a drawer for my desk.</p>
+        <p>That includes this mushroom-themed chess set, which rolls up into a log.</p>
+        <div class="shots wide">
+          <figure>
+            <img src="images/chess.jpg" alt="A mushroom-themed chess set on a brown and tan board, with tan pieces in front and green pieces behind" width="1000" height="722" loading="lazy">
+            <figcaption>The mushroom chess set, set up.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/log.jpg" alt="A brown 3D printed log with bark texture and painted tree rings on the end, lying on a desk" width="1000" height="863" loading="lazy">
+            <figcaption>The log the board rolls up into.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="craft">
+        <h3>Coffee at home</h3>
+        <p>I make coffee at home, including latte art.</p>
+        <div class="shots">
+          <figure>
+            <img src="images/coffee.jpg" alt="A latte with a leaf pattern in the foam, in a brown ceramic mug" width="900" height="1200" loading="lazy">
+          </figure>
+        </div>
+      </div>
+
+      <p class="more">I play video games, and I like learning new things for their own sake. I like to read too. Right now it is Dungeon Crawler Carl.</p>
+    </section>
+
+    <section id="links">
+      <h2>Elsewhere</h2>
+      <ul class="links">
+        <li><a href="https://github.com/poven45">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/palwinder-sangha-b5b903230">LinkedIn</a></li>
+        <li><a href="mailto:Palwinder4Sangha5@proton.me">Email</a></li>
+        <!-- Put your resume PDF in the same folder as this file and keep the name resume.pdf. -->
+        <li><a href="resume.pdf">Resume (PDF)</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Palwinder Sangha, Salem, Oregon</p>
+    </footer>
+
+  </main>
+</body>
+</html>
